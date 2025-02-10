@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HimWiki</title>
+    <link rel="icon" href="./media/HimAva.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="baza">
+        <div class="tema"><h2> Крохмаль з картоплі</h2></div>
+
+        <p>ㅤВітаю! Це невеликий сайт, присвячений добуванню крохмалю з картоплі. Тут ви знайдете детальну інформацію про різні методи отримання крохмалю в домашніх умовах.<br> ㅤЩоб зробити процес навчання зручним, матеріали представлені у трьох форматах: текстові інструкції, відео та слайдер із покроковими фото. Обирайте той, що вам найзручніше, та дізнавайтеся більше про цей цікавий процес!</p>
+        <p> « Підготовка картоплі – ретельно миємо та очищаємо бульби від кожури.»<br>
+            « Подрібнення – натираємо картоплю на дрібній тертці або подрібнюємо у блендері.»<br>
+            « Відділення крохмалю – заливаємо подрібнену масу водою, добре перемішуємо та залишаємо на деякий час.»<br>
+            « Фільтрація – проціджуємо суміш через марлю або сито, відокремлюючи рідину від м'якоті.»<br>
+            « Осадження крохмалю – залишаємо рідину відстоятися, щоб крохмаль осів на дно.<br>
+            « Зливання зайвої води – обережно зливаємо верхній шар води, залишаючи осад.»<br>
+            « Сушіння – викладаємо крохмаль на рівну поверхню (наприклад, тарілку або пергамент) та висушуємо на сонці або при кімнатній температурі.»<br>
+            « Зберігання – після повного висихання подрібнюємо крохмаль та пересипаємо у суху герметичну ємність.»</p>
+
+            <div class="Vid">
+                <iframe src="https://drive.google.com/file/d/1b720gtrb8cfyG1tZGCiT5ujDUCWWCCAU/preview" width="800" height="450" allowfullscreen></iframe>
+
+            </div>
+            
+            <div class="slider-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="slider">
+                    <img src="./media/P1.jpg" class="slide active" alt="Фото 1">
+                    <img src="./media/P2.jpg" class="slide" alt="Фото 2">
+                    <img src="./media/P3.jpg" class="slide" alt="Фото 3">
+                    <img src="./media/P4.jpg" class="slide" alt="Фото 4">
+                    <img src="./media/P5.jpg" class="slide" alt="Фото 5">
+                    <img src="./media/P6.jpg" class="slide" alt="Фото 6">
+                    <img src="./media/P7.jpg" class="slide" alt="Фото 7">
+                    <img src="./media/P8.jpg" class="slide" alt="Фото 8">
+                </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+    </div>
+    
+
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        }
+    </script>
+        
+</body>
+</html> 
